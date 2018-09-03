@@ -1,0 +1,26 @@
+** 线程数 IP 端口号 数据库名 用户名 密码 更新Key范围最小值 更新Key范围最大值 每个线程更新次数 数据库类型（2:cedar）是否预编译 操作语句 负载类型（0:insert,repalce;1:delete;2:update） 插入数据的key范围
+40	10.11.1.195	31880	0	admin	admin	0	0	0	2	true	delete from t1 where id = ? 	1	10000000	10800000
+#####
+20	10.11.1.195	31880	0	admin	admin	0	0	0	2	true	delete from t1 where id = ? 	1	10000000	10300000
+20	10.11.1.196	31880	0	admin	admin	0	0	0	2	false	delete from t1 where id = 	1	10300000	10600000
+#####
+20	10.11.1.190	31880	0	admin	admin	0	0	0	2	true	insert into t1 values (?, ?, ?)	0	10000000	10100000
+20	10.11.1.190	31880	0	admin	admin	0	0	0	2	true	replace into t1 values (?, ?, ?)	0	10100000	10200000
+20	10.11.1.192	31880	0	admin	admin	0	0	0	2	false	insert into t1 values 	0	10300000	10400000
+20	10.11.1.194	31880	0	admin	admin	0	0	0	2	false	replace into t1 values 	0	10500000	10600000
+20	10.11.1.197	31880	0	admin	admin	0	10000000	100000	2	true	update t1 set value1 = ? where id = ? 	2	0	0
+20	10.11.1.198	31880	0	admin	admin	0	10000000	100000	2	false	update t1 set value1 = 	2	0	0
+#####
+20	10.11.1.195	31880	0	admin	admin	0	0	0	2	true	delete from t1 where id = ? 	1	10000000	10300000
+20	10.11.1.196	31880	0	admin	admin	0	0	0	2	false	delete from t1 where id = 	1	10300000	10600000
+#####
+20	10.11.1.190	31880	0	admin	admin	0	0	0	2	true	insert into t1 values (?, ?, ?)	0	10000000	10100000
+20	10.11.1.190	31880	0	admin	admin	0	0	0	2	true	replace into t1 values (?, ?, ?)	0	10100000	10200000
+20	10.11.1.192	31880	0	admin	admin	0	0	0	2	false	insert into t1 values 	0	10300000	10400000
+20	10.11.1.194	31880	0	admin	admin	0	0	0	2	false	replace into t1 values 	0	10500000	10600000
+20	10.11.1.197	31880	0	admin	admin	0	10000000	100000	2	true	update t1 set value1 = ? where id = ? 	2	0	0
+20	10.11.1.198	31880	0	admin	admin	0	10000000	100000	2	false	update t1 set value1 = 	2	0	0
+#####
+20	10.11.1.195	31880	0	admin	admin	0	0	0	2	true	delete from t1 where id = ? 	1	10000000	10300000
+20	10.11.1.196	31880	0	admin	admin	0	0	0	2	false	delete from t1 where id = 	1	10300000	10600000
+#####

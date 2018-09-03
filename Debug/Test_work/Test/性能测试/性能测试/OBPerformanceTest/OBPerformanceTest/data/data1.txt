@@ -1,0 +1,18 @@
+#size: table size
+#int: 0; real: 1; decimal: 2; date: 3; string: 4; char: 5; bool: 6
+#int; min; max
+#real; exponent; precision
+#decimal; p; s
+#date; begin; end
+#string; length
+#char
+#bool
+size: 3000
+key: 1; 2; 4
+0; 0; 10000
+1; 6; 5
+2; 10; 4
+3; 1158886166837; 1458886166837
+4; 30
+5
+6

@@ -1,0 +1,33 @@
+drop table if exists usertable ;
+CREATE TABLE USERTABLE (
+    YCSB_KEY INT PRIMARY KEY,
+    FIELD1 VARCHAR(100),
+    FIELD2 VARCHAR(100),
+    FIELD3 VARCHAR(100),
+    FIELD4 VARCHAR(100)
+);
+
+insert into usertable values (1, 'a', 'aa', 'aaa', 'aaaa');
+insert into usertable values (2, 'b', 'bb', 'bbb', 'bbbb');
+insert into usertable values (3, 'c', 'cc', 'ccc', 'cccc');
+insert into usertable values (4, 'd', 'dd', 'ddd', 'dddd');
+
+set @v = 'null';
+
+drop procedure if exists sp_sel_05;
+
+delimiter //
+
+create procedure sp_sel_05(out @var varchar)
+begin
+    update usertable set field2 = 'ndd' where ycsb_key = 4;
+    select field2 into @var from usertable where field1= 'd';
+end //
+
+delimiter ;
+
+call sp_sel_05(@v);
+
+select * from usertable;
+
+select @v;

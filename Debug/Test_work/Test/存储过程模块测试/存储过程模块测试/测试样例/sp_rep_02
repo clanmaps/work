@@ -1,0 +1,27 @@
+drop table if exists usertable;
+
+create table usertable (
+    ycsb_key int primary key,
+    field1 varchar(100),
+    field2 varchar(100),
+    field3 varchar(100),
+    field4 varchar(100)
+);
+
+drop procedure if exists sp_rep_02;
+
+delimiter //
+
+create procedure sp_rep_02()
+begin 
+  replace into usertable (ycsb_key, field1) values (1, '01');
+  replace into usertable (ycsb_key, field2) values (2, '02');
+  replace into usertable (ycsb_key, field3) values (3, '03');
+  replace into usertable (ycsb_key, field4) values (4, '04');
+end //
+
+delimiter ;
+
+call sp_rep_02();
+
+select * from usertable;

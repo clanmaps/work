@@ -1,0 +1,29 @@
+drop table if exists usertable ;
+CREATE TABLE USERTABLE (
+    YCSB_KEY INT PRIMARY KEY,
+    FIELD1 VARCHAR(100),
+    FIELD2 VARCHAR(100),
+    FIELD3 VARCHAR(100),
+    FIELD4 VARCHAR(100)
+);
+
+insert into usertable values (1, '01', '02', '03', '04');
+insert into usertable values (2, '01', '02', '03', '04');
+
+drop procedure if exists sp_rep_03;
+
+delimiter //
+
+create procedure sp_rep_03()
+begin 
+  replace into usertable values (3, 'ab', 'cd', 'ef', 'gf');
+  replace into usertable values (4, 'ab', 'cd', 'ef', 'gf');
+  replace into usertable values (5, 'ab', 'cd', 'ef', 'gf');
+  replace into usertable values (1, 'ab', 'cd', 'ef', 'gf');
+end //
+
+delimiter ;
+
+call sp_rep_03();
+
+select * from usertable;

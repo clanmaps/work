@@ -1,0 +1,14 @@
+20	10.11.1.190	31880	0	admin	admin	0	10000000	10000	2	true	select * from t1 where id = ?	0	0
+20	10.11.1.192	31880	0	admin	admin	0	10000000	10000	2	true	select * from t1 where id between ? and ?	1	100
+#####
+20	10.11.1.190	31880	0	admin	admin	0	10000000	10000	2	true	select * from t1 where id = ?	0	0
+20	10.11.1.192	31880	0	admin	admin	0	10000000	10000	2	true	select * from t1 where id between ? and ?	1	100
+#####
+20	10.11.1.190	31880	0	admin	admin	0	10000000	10000	2	false	select * from t1 where id = 	0	0
+20	10.11.1.191	31880	0	admin	admin	0	10000000	10000	2	false	select * from t1 where value1 = 	0	0
+20	10.11.1.192	31880	0	admin	admin	0	10000000	10000	2	false	select * from t1 where id between 	1	100
+#####
+20	10.11.1.190	31880	0	admin	admin	0	10000000	10000	2	false	select * from t1 where id = 	0	0
+20	10.11.1.191	31880	0	admin	admin	0	10000000	10000	2	false	select * from t1 where value1 = 	0	0
+20	10.11.1.192	31880	0	admin	admin	0	10000000	10000	2	false	select * from t1 where id between 	1	100
+#####

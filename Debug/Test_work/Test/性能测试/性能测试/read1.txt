@@ -1,0 +1,12 @@
+20	10.11.1.193	13306	test	root	root	0	10000000	10000	0	true	select * from t1 where id = ?	0	0
+20	10.11.1.193	13306	test	root	root	0	10000000	10000	0	false	select * from t1 where id = 	0	0
+20	10.11.1.197	5432	test	liyuming	postgres	0	10000000	10000	1	true	select * from t1 where id = ?	0	0
+20	10.11.1.197	5432	test	liyuming	postgres	0	10000000	10000	1	false	select * from t1 where id = 	0	0
+20	10.11.1.193	13306	test	root	root	0	10000000	1000	0	true	select * from t1 where id between ? and ?	1	100
+20	10.11.1.193	13306	test	root	root	0	10000000	1000	0	false	select * from t1 where id between 	1	100
+20	10.11.1.197	5432	test	liyuming	postgres	0	10000000	1000	1	true	select * from t1 where id between ? and ?	1	100
+20	10.11.1.197	5432	test	liyuming	postgres	0	10000000	1000	1	false	select * from t1 where id between 	1	100
+20	10.11.1.193	13306	test	root	root	0	1000000000	10000	0	true	select * from t1 where value1 = ?	0	0
+20	10.11.1.193	13306	test	root	root	0	1000000000	10000	0	false	select * from t1 where value1 = 	0	0
+20	10.11.1.197	5432	test	liyuming	postgres	0	1000000000	10000	1	true	select * from t1 where value1 = ?	0	0
+20	10.11.1.197	5432	test	liyuming	postgres	0	1000000000	10000	1	false	select * from t1 where value1 = 	0	0

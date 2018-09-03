@@ -1,0 +1,24 @@
+## one cluster case
+
+Connection conn=GET_CONN[master];
+Statement stat=GET_STAT[conn];
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(39,0));";stat;-2];
+
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(37,37));";stat;-2];
+
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(1,1));";stat;-2];
+
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(0,0));";stat;-2];
+
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(-1,-1));";stat;-2];
+
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(38,38));";stat;-2];
+
+SQL["drop table if exists t1;";stat;2];
+SQL["create table t1(k int primary key, c2 decimal(38,-1));";stat;-2];

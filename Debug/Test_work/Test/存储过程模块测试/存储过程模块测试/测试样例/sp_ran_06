@@ -1,0 +1,29 @@
+drop table if exists usertable ;
+CREATE TABLE USERTABLE (
+    YCSB_KEY INT PRIMARY KEY,
+    FIELD1 VARCHAR(100),
+    FIELD2 VARCHAR(100),
+    FIELD3 VARCHAR(100),
+    FIELD4 VARCHAR(100)
+);
+
+insert into usertable values (1, '01', '02', '03', '04');
+insert into usertable values (2, '01', '02', '03', '04');
+insert into usertable values (3, '01', '02', '02', '04');
+insert into usertable values (4, '01', '02', '03', '04');
+
+drop procedure if exists sp_ran_06;
+
+delimiter //
+
+create procedure sp_ran_06()
+begin
+    update usertable set field3='03', field4='new1' where ycsb_key = 3;
+    update usertable set field1='new2', field2='new2' where field3='03';
+end //
+
+delimiter ;
+
+call sp_ran_06();
+
+select * from usertable;
